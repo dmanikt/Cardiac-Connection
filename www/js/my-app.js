@@ -16,7 +16,7 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-    $.getJSON("../profiles.json", function(data){console.log(data.content[0].name)});
+   // $.getJSON("../profiles.json", function(data){console.log(data.content[0].name)});
     console.log("next");
     console.log("printed");
 });
@@ -138,3 +138,25 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
+
+var name = "name";
+fetch('https://storage.cloud.google.com/cardiacchemistry/heartrate.json?authuser=1&walkthrough_tutorial_id=storage_quickstart')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+        console.log(data.fitbit[0].heartrate);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+
