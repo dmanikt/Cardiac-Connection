@@ -8,4 +8,4 @@ basically tinder when your heart rate goes up it swipes right
 
 Built with Cordova and node.
 
-Made at HackUMBC 2019.
+Made at HackUMBC 2019 with [Brandon Hsu](https://github.com/branboyo) and [Ben Lin](https://github.com/BenLin00).
